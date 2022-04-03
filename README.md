@@ -1,2 +1,2 @@
 # blog.aspy.dev
-blog.aspy.dev repository
+This is very unfinished and improvements will come over time.
