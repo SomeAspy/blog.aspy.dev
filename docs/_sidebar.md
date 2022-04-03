@@ -6,6 +6,4 @@
 -->
 
 -   [Home](/)
--   [About](/about.md)
 -   [2022](/pages/2022/_sidebar.md)
-    -   [April](/pages/2022/april/_sidebar.md)
