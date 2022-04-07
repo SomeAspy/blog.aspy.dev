@@ -8,3 +8,4 @@
 -   [2022](/pages/2022/_sidebar.md)
     -   [April](/pages/2022/april/_sidebar.md)
         -   [3rd](/pages/2022/april/3rd.md "April 3rd")
+        -   [7th](/pages/2022/april/7th.md "April 7th")
