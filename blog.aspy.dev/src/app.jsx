@@ -10,12 +10,15 @@ const Home = lazy(() => import('./pages/home.jsx'));
 const About = lazy(() => import('./pages/about.jsx'));
 const Y2022 = lazy(() => import('./pages/2022/2022.jsx'));
 
-render(() => (
-    <Router>
-        <Routes>
-            <Route path='/' element={Home} />
-            <Route path='/about' element={About} />
-            <Route path='/2022' element={Y2022} />
-        </Routes>
-    </Router>
-));
+render(
+    () => (
+        <Router>
+            <Routes>
+                <Route path='/' element={Home} />
+                <Route path='/about' element={About} />
+                <Route path='/2022' element={Y2022} />
+            </Routes>
+        </Router>
+    ),
+    document.getElementById('root'),
+);
