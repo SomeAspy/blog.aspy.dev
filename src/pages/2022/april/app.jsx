@@ -6,9 +6,9 @@ import { render } from 'solid-js/web';
 import { lazy } from 'solid-js';
 import { Routes, Route, Router } from 'solid-app-router';
 
-const Home = lazy(() => import('./pages/home.jsx'));
-const About = lazy(() => import('./pages/about.jsx'));
-const Y2022 = lazy(() => import('./pages/2022/2022.jsx'));
+const Home = lazy(() => import('../../home.jsx'));
+const About = lazy(() => import('../../about.jsx'));
+const Y2022 = lazy(() => import('../2022.jsx'));
 
 render(
     () => (
