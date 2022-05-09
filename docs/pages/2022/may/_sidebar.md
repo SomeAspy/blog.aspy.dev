@@ -4,8 +4,8 @@
  This software is released under the MIT License.
  https://opensource.org/licenses/MIT
 -->
-
 -   [Home](/)
 -   [2022](/pages/2022/_sidebar.md)
-    -   [April](/pages/2022/april/_sidebar.md)
     -   [May](/pages/2022/may/_sidebar.md)
+        -   [8th](/pages/2022/may/8th.md)
+        -   [9th](/pages/2022/may/9th.md)
