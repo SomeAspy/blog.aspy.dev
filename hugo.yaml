@@ -1,0 +1,14 @@
+baseURL: blog.aspy.dev
+languageCode: en-us
+title: Aspy's Blog
+theme: PaperMod
+
+
+params:
+  assets:
+    favicon: /favicon.svg
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

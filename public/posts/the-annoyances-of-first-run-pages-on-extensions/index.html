@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>The Annoyances of First Run Pages on Extensions | Aspy&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="
+Some extensions can justify it, but not many
+In my school district, we force deploy Adblock Plus to all student and staff devices. We do this because many ads in this day and age can be downright malicious to end users. In addition, they can impede the usage of sites.
+While I don&rsquo;t like Adblock Plus for many reasons, (Later post perhaps) this is downright awful on some devices, mainly the ones we have in carts, which reset every time they are closed, to wipe student logins. Standard practice for shared Chromebooks. The issue arises where Adblock Plus has a &ldquo;first run&rdquo; page, which runs every time the extension is installed. This page has an unnecessary loading page (Chrome already handles installing extensions, this is just useless) and after &ldquo;loading&rdquo; it then proceeds to beg for donations.">
+<meta name="author" content="">
+<link rel="canonical" href="//localhost:1313/posts/the-annoyances-of-first-run-pages-on-extensions/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="//localhost:1313/favicon.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="//localhost:1313/posts/the-annoyances-of-first-run-pages-on-extensions/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="//localhost:1313/" accesskey="h" title="Aspy&#39;s Blog (Alt + H)">Aspy&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      The Annoyances of First Run Pages on Extensions
+    </h1>
+    <div class="post-meta"><span title='2023-12-08 00:00:00 +0000 UTC'>December 8, 2023</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p><img alt="&ldquo;Installing&rdquo; Adblock Plus&hellip;" loading="lazy" src="/posts/the-annoyances-of-first-run-pages-on-extensions/fakeinstall.png"></p>
+<h2 id="some-extensions-can-justify-it-but-not-many">Some extensions can justify it, but not many<a hidden class="anchor" aria-hidden="true" href="#some-extensions-can-justify-it-but-not-many">#</a></h2>
+<p>In my school district, we force deploy <a href="https://chromewebstore.google.com/detail/adblock-plus-free-ad-bloc/cfhdojbkjhnklbpkdaibdccddilifddb">Adblock Plus</a> to all student and staff devices. We do this because many ads in this day and age can be downright malicious to end users. In addition, they can impede the usage of sites.</p>
+<p>While I don&rsquo;t like Adblock Plus for many reasons, (Later post perhaps) this is downright awful on some devices, mainly the ones we have in carts, which reset every time they are closed, to wipe student logins. Standard practice for shared Chromebooks. The issue arises where Adblock Plus has a &ldquo;first run&rdquo; page, which runs every time the extension is installed. This page has an <a href="https://www.reddit.com/r/ProgrammerHumor/comments/s60to6/i_made_a_fake_progress_bar_to_shut_up_clients/">unnecessary loading page</a> (Chrome already handles installing extensions, this is just useless) and after &ldquo;loading&rdquo; it then proceeds to beg for donations.</p>
+<p><img alt="Adblock plus guilt tripping you into donations." loading="lazy" src="/posts/the-annoyances-of-first-run-pages-on-extensions/donate.png"></p>
+<h3 id="on-a-tangent-did-you-know-its-adblock-plus-is-practically-useless-anyway-they">On a tangent, did you know its Adblock plus is practically useless anyway? <a href="https://www.businessinsider.com/google-microsoft-amazon-taboola-pay-adblock-plus-to-stop-blocking-their-ads-2015-2">They&rsquo;ve been bribed by almost every major advertiser to whitelist their ads.</a><a hidden class="anchor" aria-hidden="true" href="#on-a-tangent-did-you-know-its-adblock-plus-is-practically-useless-anyway-they">#</a></h3>
+<p>Now, asking for a donation every now and then is fine, but the problem arises in the fact that this is run on every install, meaning when a student opens a Chromebook, they get hit with a ton of &ldquo;first run&rdquo; pages (there is more than one offender here) because Chrome proceeds to install all the user extensions. This is something teachers have complained about a lot because it quite frankly, is annoying.</p>
+<p>There is a policy setting to disable it in Adblock Plus, in <a href="chrome://policy">chrome://policy</a>.</p>
+<p><img alt="Adblock Plus policies, with <code>suppress_first_run_page</code> highlighted" loading="lazy" src="/posts/the-annoyances-of-first-run-pages-on-extensions/suppress.png"></p>
+<p>Upon looking into how to do this, all we found there was no real official documentation on how to do this, and <a href="https://blog.adblockplus.org/development-builds/suppressing-the-first-run-page-on-chrome">the only blog post mentioning blocking the first run page via the registry for Windows.</a>
+We were not having a lot of luck figuring out on our own, as it&rsquo;s not a toggle switch in the console, it asks for JSON input. We tried a few things similar to <code>{&quot;suppress_first_run_page&quot;:true}</code> and whatnot, but it was not applying.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;supress_first_run_page&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;Value&#34;</span>: <span style="color:#66d9ef">true</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>It caught me totally off guard that there was a <code>&quot;Value&quot;</code> requirement, but it worked. Cool! That&rsquo;s one down. There are a few other offending extensions that do this pop-up thing, but I will detail that as we figure out each.</p>
+<p><img alt="<code>suppress_first_run_page</code> is now <code>true</code>!" loading="lazy" src="/posts/the-annoyances-of-first-run-pages-on-extensions/supresstrue.png"></p>
+<p>The other extensions are not so easy I suppose, and in the case of <a href="https://chromewebstore.google.com/detail/screencastify-screen-vide/mmeijimgabbpbgpdklnllpncmdofkcpn">Screencastify</a>, there is only an <code>options</code> input, which I can only hope has a way to disable the first run page.</p>
+<p><img alt="Screencastify policy options" loading="lazy" src="/posts/the-annoyances-of-first-run-pages-on-extensions/screencast.png"></p>
+<h2 id="what-kinds-of-things-are-proper-uses-of-a-welcome-page">What kinds of things are &ldquo;proper&rdquo; uses of a welcome page?<a hidden class="anchor" aria-hidden="true" href="#what-kinds-of-things-are-proper-uses-of-a-welcome-page">#</a></h2>
+<p>Take <a href="https://github.com/refined-github/refined-github">Refined GitHub</a>, upon installation, you are greeted with the <a href="https://github.com/refined-github/refined-github/issues/3543">welcome page</a>. Why is something like Refined GitHub exempt from my little crusade here? The extension <em>needs</em> a GitHub token to perform about a quarter of it&rsquo;s functions.</p>
+<p><img alt="Refined GitHub welcome page, with the token requirement highlighted" loading="lazy" src="/posts/the-annoyances-of-first-run-pages-on-extensions/refinedgithub.png"></p>
+<h2 id="the-acceptable-ads-program">The acceptable ads program<a hidden class="anchor" aria-hidden="true" href="#the-acceptable-ads-program">#</a></h2>
+<p>It&rsquo;s hard for me to talk about Adblock Plus without mentioning their acceptable ads program, and it is the reason I use <a href="https://ublockorigin.com/">uBlock Origin</a>. I have to admit, its a good idea on paper, but when users install an &ldquo;ad blocker&rdquo; they don&rsquo;t expect little footnotes, and there shouldn&rsquo;t really be footnotes in my opinion. It works by charging publishers a fee to have their ads whitelisted. This sounds way too much like bribery to me, and I don&rsquo;t like it. There&rsquo;s a lot more to it, but it&rsquo;s not something I&rsquo;m interested in other than scratching the surface of it. With that said&hellip;</p>
+<h2 id="the-best-ad-blocker-for-everyone">The best ad blocker for everyone<a hidden class="anchor" aria-hidden="true" href="#the-best-ad-blocker-for-everyone">#</a></h2>
+<p>For both enterprise and end users, I can only really suggest uBlock Origin. It is quite performant, and really just works out of the box.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="//localhost:1313/">Aspy&#39;s Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

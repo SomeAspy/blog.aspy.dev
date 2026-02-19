@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Aspy&#39;s Blog</title>
+    <link>//localhost:1313/</link>
+    <description>Recent content on Aspy&#39;s Blog</description>
+    <generator>Hugo -- 0.155.3</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 01 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SH1MMER: Chromebook unenrollment exploit</title>
+      <link>//localhost:1313/posts/sh1mmer-chromebook-de-enrollment-exploit/</link>
+      <pubDate>Fri, 01 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/sh1mmer-chromebook-de-enrollment-exploit/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;Screenshot from the SH1MMER home page&#34; loading=&#34;lazy&#34; src=&#34;//localhost:1313/posts/sh1mmer-chromebook-de-enrollment-exploit/shi1mmer-1.jpg&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;warning-tampering-with-a-device-you-do-not-own-is-a-federal-crime-charges-can-be-pressed&#34;&gt;Warning: Tampering with a device you do not own is a Federal crime. Charges can be pressed&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://sh1mmer.me/&#34;&gt;SH1MMER is an exploit to unenroll Chromebooks from enterprise management.&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Upon investigating, I found it affects the new Chromebooks my district just bought, so this blog will try to detail the process we do to secure them more. It&amp;rsquo;s not perfect, because SH1MMER is a hardware exploit from what I understand, and there are currently only software patches.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SS14: FOSS Gaming on Linux</title>
+      <link>//localhost:1313/posts/ss14-linux-oss-free/</link>
+      <pubDate>Tue, 29 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/ss14-linux-oss-free/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;Space station 14 is the most insane game you might play in a while.&#34; loading=&#34;lazy&#34; src=&#34;//localhost:1313/posts/ss14-linux-oss-free/ss14.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Space Station 14 can be compared to Among Us, to someone who has never played, If you thought Among Us was hectic, it is nothing compared to SS14.
+Oftentimes, imposters are the least of your concern, and the worst is other players incompetence in running the place.&lt;/p&gt;
+&lt;!-- markdownlint-configure-file { &#34;MD033&#34;: { &#34;allowed_elements&#34;: [&#34;iframe&#34;] } } --&gt;  
+&lt;iframe src=&#34;https://store.steampowered.com/widget/1255460/&#34; frameborder=&#34;0&#34; width=&#34;646&#34; height=&#34;190&#34;&gt;&lt;/iframe&gt;
+&lt;h2 id=&#34;so-what-is-this&#34;&gt;So what is this?&lt;/h2&gt;
+&lt;p&gt;Space Station 14 is a hectic imposter/management game where you take on the role of someone trying to keep a failing station going, all while things are made worse by sabotage or incompetence. There are several roles you can choose from:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Pains of Optane</title>
+      <link>//localhost:1313/posts/the-pains-of-optane/</link>
+      <pubDate>Sun, 27 Aug 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/the-pains-of-optane/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;A stick of Optane, combined with a terabyte of SSD general storage&#34; loading=&#34;lazy&#34; src=&#34;//localhost:1313/posts/the-pains-of-optane/optane.jpg&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;this-is-not-a-guide-on-how-to-recover-data-from-optane-i-was-never-able-to-figure-it-out&#34;&gt;This is not a guide on how to recover data from Optane, I was never able to figure it out&lt;/h2&gt;
+&lt;p&gt;Now don&amp;rsquo;t get me wrong, Optane seems pretty cool - &lt;a href=&#34;https://www.youtube.com/watch?v=tcKCBwEPXZc&#34;&gt;coming from the video Intel gives about it&lt;/a&gt;. My laptop came with it installed, and I had no issues with it! But when it comes to getting data off it - oh boy&amp;hellip; you are in for a treat.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Making DuckDuckNo in Solid.JS</title>
+      <link>//localhost:1313/posts/archive-duckduckno-solidjs/</link>
+      <pubDate>Mon, 09 May 2022 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/archive-duckduckno-solidjs/</guid>
+      <description>&lt;p&gt;Making &lt;a href=&#34;https://duckduckno.com&#34;&gt;DuckDuckNo&lt;/a&gt; in solid was quite challenging.&lt;/p&gt;
+&lt;p&gt;It pushed my skills a bit, which made for a lot of fun. It uses the google search API because to DuckDuckGo API is garbage, and offers only the &amp;ldquo;instance answers API&amp;rdquo; which seems to made more for voice assistants, useless in this case. since I had to switch to google, I had to start using an API key, which meant I needed a backend to conceal the API key. &lt;a href=&#34;https://github.com/SomeAspy/DuckDuckNoBackend&#34;&gt;hence, The backend repo&lt;/a&gt; which simply acts as a middleman, making results from the google custom search api easier to use, and removing unneeded parts (they may be added in the future when I feel like it.) Its all for jokes of course, I&amp;rsquo;m just surprised I was able to get duckduckno.com&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>My Plans for a new laptop</title>
+      <link>//localhost:1313/posts/archive-new-laptop/</link>
+      <pubDate>Sun, 08 May 2022 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/archive-new-laptop/</guid>
+      <description>&lt;p&gt;For a month or so I&amp;rsquo;ve been thinking about getting a new laptop. Originally, the plan was to save around $7k for a &lt;a href=&#34;https://www.lenovo.com/us/en/p/laptops/thinkpad/thinkpadp/thinkpad-p15-gen-2-(15-inch-intel)/wmd00000487&#34;&gt;ThinkPad P15&lt;/a&gt; with maxed out specs. (Probably an i9, 64GB RAM, and a Quadro, similar to the one my college gave me.) However, after putting more thought into it, I may instead get a laptop for around $2k, as its far more feasible and just makes more sense.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The convoluted plans for the future of this blog</title>
+      <link>//localhost:1313/posts/archive-blog-plans/</link>
+      <pubDate>Thu, 21 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/archive-blog-plans/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;The ghost version of this blog that could have been&#34; loading=&#34;lazy&#34; src=&#34;//localhost:1313/posts/archive-blog-plans/ghost.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;For the past few days I&amp;rsquo;ve been working on converting the entire blog to &lt;a href=&#34;https://solidjs.com&#34;&gt;Solid.JS&lt;/a&gt;. I haven&amp;rsquo;t really made much progress and its kinda disappointing. I started making the website routes and what not, but after that I realized I really didn&amp;rsquo;t even know what I wanted the blog to look like and kinda got stuck there. I also tried setting up a system of automatically making routes to pages I upload but it seems that isn&amp;rsquo;t feasible which is also a major setback as that was supposed to be one of the key features. What really put the final nail in the coffin for me was the fact that I couldn&amp;rsquo;t really just render markdown, meaning I couldn&amp;rsquo;t just write and publish, I&amp;rsquo;d have to make actual HTML for each page.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Converting Aspy.dev to Solid.js</title>
+      <link>//localhost:1313/posts/archive-aspy-dev-solidjs/</link>
+      <pubDate>Fri, 15 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/archive-aspy-dev-solidjs/</guid>
+      <description>&lt;p&gt;I&amp;rsquo;ve been meaning to update my main site, &lt;a href=&#34;https://aspy.dev&#34;&gt;aspy.dev&lt;/a&gt; to some React for quite a while as it was starting to become a huge pain to manage it.
+You can actually &lt;a href=&#34;https://github.com/SomeAspy/aspy.dev/tree/76dc0b5071258aa59c7b48cb6ad6de8382f50aa6&#34;&gt;view the old code here&lt;/a&gt; and you will probably agree its a massive dumpster fire.&lt;/p&gt;
+&lt;p&gt;Either way, I brought it up in a discord server with a lot of developers on it, and I was recommended &lt;a href=&#34;https://www.solidjs.com/&#34;&gt;Solid.js&lt;/a&gt;. it was actually incredibly easy, to my surprise. Furthermore, the modularity of everything made developing and updating elements used across the entire site super easy. For example, the navigation bar now has its own file that I just import everywhere I want to use it!&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>I got an RTX 3060</title>
+      <link>//localhost:1313/posts/archive-rtx-3060/</link>
+      <pubDate>Thu, 14 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/archive-rtx-3060/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;Micro Center has RTX cards fully stocked!&#34; loading=&#34;lazy&#34; src=&#34;//localhost:1313/posts/archive-rtx-3060/RTX.webp&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The other day I was going to my local Micro Center looking to pick out a laptop to buy in a few weeks. However, when I was there, I found they were fully stocked with RTX GPUs.&lt;/p&gt;
+&lt;p&gt;So immediately I knew I had to get one. I had about $440 on me at the time, but the GPU I wanted (the cheapest one there at the time, an &lt;a href=&#34;https://rog.asus.com/us/graphics-cards/graphics-cards/rog-strix/rog-strix-rtx3060-o12g-gaming-model/&#34;&gt;Asus RTX 3060&lt;/a&gt;)was about $520 (including the 6% tax in MA)&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>First Entry</title>
+      <link>//localhost:1313/posts/archive-first-entry/</link>
+      <pubDate>Sun, 03 Apr 2022 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/archive-first-entry/</guid>
+      <description>&lt;p&gt;Today is April 3rd. I am setting up this blog to keep a log of some cool things I do I guess- well not really cool but IDK.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve been in the psychiatric hospital since Monday, and I&amp;rsquo;m supposed to be discharged tomorrow. Cannot wait to go home!&lt;/p&gt;
+&lt;p&gt;From what I&amp;rsquo;ve heard Psychiatric hospitals are awful, but I&amp;rsquo;ve had a pretty good experience here. It&amp;rsquo;s quiet at night and the staff are amazing.
+Most importantly, I&amp;rsquo;m allowed to use my phone and laptop. There are certainly some specific rules, like I can only use the laptop in the
+interview room, and I can only use my phone in the common room. they have to charge it for me as well. most of the day here is free time, which
+I wasn&amp;rsquo;t expecting. I find the anti suicide measures here interesting, for example, &lt;a href=&#34;https://hipac.com.au/mental-health-safety-products/bathroom-and-bedroom-products/coat-towel-hooks/&#34;&gt;the hooks here if you put too much weight on them they slide down&lt;/a&gt;. all the doors are controlled by electronic locks and the bathroom doors are kinda like gymnastic mats. The door handles here are actually
+&lt;a href=&#34;https://www.craftmasterhardware.com/shop-by-category/door-locks/anti-ligature/acchcylpa234lcsfic26drh-accurate-ch-cyl-pa-passage-cresent-handle-cyl-anti-lig-lock&#34;&gt;over $1000 each at the time of writing&lt;/a&gt;! The shower here is controlled by a single button (It seems to be
+capacitive possibly) but you cannot control the temperature. The shower was generally too hot. The meals were pretty good for commercial/bulk meals.
+Pizza night was pretty good.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
