@@ -1,7 +1,7 @@
 +++
 date = '2025-12-20'
 draft = false
-title = 'I'm a bitch to big tech'
+title = "I'm a bitch to big tech"
 +++
 
 ![Old man yells at cloud](./old-man-yells-at-cloud.webp)

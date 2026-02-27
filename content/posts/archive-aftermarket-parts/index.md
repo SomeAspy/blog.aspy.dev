@@ -1,7 +1,6 @@
 +++
-date = '1970-1-1'
 draft = true
-title = '---TAKEN DOWN---There's always a catch with aftermarket parts'
+title = "---TAKEN DOWN---There's always a catch with aftermarket parts"
 +++
 
 ![null](./ss.webp)
