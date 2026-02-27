@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>YouTube Music Scrobbling on iOS | Aspy&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="
+Part 2: https://blog.aspy.dev/youtube-music-ios-scrobbling-part-2/
+I&rsquo;ve been scrobbling to Last.FM for a while from Desktop. Originally using YTMDesktop from the YTMDesktop org on GitHub I eventually switched to th-ch&rsquo;s YouTube Music app, both of which had support Last.FM. However, this left a gaping hole in scrobbling, and that is mobile.
+While there are apps to do this for Android (Which I will not list, as I am not an Android user, and don&rsquo;t want to recommend something I don&rsquo;t use) iOS does not have any such apps in the app store. Even if they were available to sideload, Apple makes sideloading a massive pain.">
+<meta name="author" content="">
+<link rel="canonical" href="//localhost:1313/posts/youtube-music-scrobbling-on-ios/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="//localhost:1313/favicon.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="//localhost:1313/posts/youtube-music-scrobbling-on-ios/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="//localhost:1313/" accesskey="h" title="Aspy&#39;s Blog (Alt + H)">Aspy&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      YouTube Music Scrobbling on iOS
+    </h1>
+    <div class="post-meta"><span title='2024-03-14 00:00:00 +0000 UTC'>March 14, 2024</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p><img alt="LastFM + Youtube Music" loading="lazy" src="/posts/youtube-music-scrobbling-on-ios/7bac66da-ed71-48aa-9612-73cb587d5018.png"></p>
+<h2 id="part-2">Part 2: <a href="https://blog.aspy.dev/youtube-music-ios-scrobbling-part-2/">https://blog.aspy.dev/youtube-music-ios-scrobbling-part-2/</a><a hidden class="anchor" aria-hidden="true" href="#part-2">#</a></h2>
+<p>I&rsquo;ve been scrobbling to Last.FM for a while from Desktop. Originally using <a href="https://github.com/ytmdesktop/ytmdesktop/">YTMDesktop from the YTMDesktop org on GitHub</a> I eventually switched to <a href="https://github.com/pear-devs/pear-desktop">th-ch&rsquo;s YouTube Music app</a>, both of which had support Last.FM. However, this left a gaping hole in scrobbling, and that is mobile.</p>
+<p>While there are apps to do this for Android (Which I will not list, as I am not an Android user, and don&rsquo;t want to recommend something I don&rsquo;t use) iOS does not have any such apps in the app store. Even if they were available to sideload, Apple makes sideloading a massive pain.</p>
+<p>I planned to make my own scrobbler that would operate on a server with an API from Google, but found that Google does not provide YouTube watch history via any API.</p>
+<p>After some investigating on the entire topic of scrobbling, I stumbled across <a href="https://github.com/FoxxMD/multi-scrobbler">Multi Scrobbler by FoxxMD</a>, which runs entirely on the server. While it has many options for scrobbling sources, the YouTube Music system uses the user&rsquo;s login cookie to log in as a traditional client and scrape the listening history. Very promising!</p>
+<p>Setting it up was quite simple. It has a docker image in both <a href="https://hub.docker.com/r/foxxmd/multi-scrobbler">Docker Hub</a> and the <a href="https://github.com/FoxxMD/multi-scrobbler/pkgs/container/multi-scrobbler">GitHub Container Registry</a> with <a href="https://foxxmd.github.io/multi-scrobbler/">well written documentation</a>!
+At first, there were a few issues (namely, incorrectly scrobbling songs again after a session) but I was able to fix this by disabling the system to retry failed requests it (seems to have) fixed the issue. I also ended up using the development image, in an attempt to fix the aforementioned issue.</p>
+<p>After setting it up, it runs a small web server to serve a GUI. From here, you can control the scrobbling services and login to Last.FM (Which you will need to <a href="https://www.last.fm/api">create a developer application for, but it isn&rsquo;t that hard</a>)</p>
+<p><img alt="Multi Scrobbler web GUI" loading="lazy" src="/posts/youtube-music-scrobbling-on-ios/image.png"></p>
+<p><del>The next problem I ran into is the fact that (in my case) this is a publicly accessible URL. I couldn&rsquo;t just close it, because Last.FM needs to callback URL to authenticate with Multi Scrobbler. I ended up protecting it with <a href="https://www.cloudflare.com/sase/products/access/">Cloudflare Access</a>, which was super simple to setup! I also didn&rsquo;t have to worry about whitelisting the callback URL, as this will only be hit by the client. (which would have to be authorized via CF Access to start the Last.FM authorization flow anyway)</del></p>
+<h2 id="update-61424">Update 6/14/24<a hidden class="anchor" aria-hidden="true" href="#update-61424">#</a></h2>
+<p>The maintainer of Multi Scrobbler <a href="https://github.com/FoxxMD/multi-scrobbler/issues/156#issuecomment-2168550525">let me know</a> that the URL doesn&rsquo;t actually have to be public at all, and can even be accessible by only localhost. From what I understand, you only <em>need</em> access to the URL for the initial login. Good to know!</p>
+<p>Since in my case, I am running this on an external network and server (<a href="https://www.hetzner.com/">Hetzner</a>) I decided to go with CloudFlare access. but you totally could set up something with Tailscale. (Something I am only recently starting to use)</p>
+<p><img alt="Cloudflare access sign-in page" loading="lazy" src="/posts/youtube-music-scrobbling-on-ios/image-2.png"></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="//localhost:1313/">Aspy&#39;s Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

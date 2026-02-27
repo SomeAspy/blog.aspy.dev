@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>My Gripes with Bun&#39;s Binary Lockfile | Aspy&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="
+This isn&rsquo;t a deep dive into the workings of Bun, and I haven&rsquo;t worked with it at all really. This is just my opinion on it after stumbling across a project that uses it, and playing with it a bit.
+The project I&rsquo;m gonna be referencing its usage in YTMusic API by Zechariah
+First thing I do is bun install which seems to update the lockfile for whatever reason.
+Sometimes this is normal. Lets take a look.">
+<meta name="author" content="">
+<link rel="canonical" href="//localhost:1313/posts/bun-lockfile-issues/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="//localhost:1313/favicon.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="//localhost:1313/posts/bun-lockfile-issues/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="//localhost:1313/" accesskey="h" title="Aspy&#39;s Blog (Alt + H)">Aspy&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      My Gripes with Bun&#39;s Binary Lockfile
+    </h1>
+    <div class="post-meta"><span title='2024-04-13 00:00:00 +0000 UTC'>April 13, 2024</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p><img alt="Bun logo, with a frown" loading="lazy" src="/posts/bun-lockfile-issues/logo.svg"></p>
+<p>This isn&rsquo;t a deep dive into the workings of Bun, and I haven&rsquo;t worked with it at all really. This is just my opinion on it after stumbling across a project that uses it, and playing with it a bit.</p>
+<p>The project I&rsquo;m gonna be referencing its usage in <a href="https://github.com/zS1L3NT/ts-npm-ytmusic-api/">YTMusic API by Zechariah</a></p>
+<p>First thing I do is <code>bun install</code> which seems to update the lockfile for whatever reason.
+Sometimes this is normal. Lets take a look.</p>
+<p><img alt="Binary file diff" loading="lazy" src="/posts/bun-lockfile-issues/image-2.png"></p>
+<p>Oops! It&rsquo;s a binary file.</p>
+<p>Bun claims this is to increase the speed of operations. Maybe it does. I haven&rsquo;t personally benchmarked it. Bun is damn fast nonetheless.</p>
+<table>
+  <thead>
+      <tr>
+          <th></th>
+          <th>PNPM</th>
+          <th>NPM</th>
+          <th>BUN</th>
+          <th>PNPM (&ndash;no-lockfile)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Time</td>
+          <td>1.931s</td>
+          <td>6.568s</td>
+          <td>0.079s</td>
+          <td>1.721s</td>
+      </tr>
+  </tbody>
+</table>
+<p>I know PNPM and (probably) Bun have caches somewhere. I have not cleared those for these tests. I removed <code>node_modules</code> and the respective lockfile before each test</p>
+<p>I&rsquo;m not sure how much having a binary file over JSON contributes to this. I kinda doubt it matters that much frankly, but I could be entirely wrong. This is just a lot of speculation.</p>
+<p>in a best case scenario, lets assume using the binary file saves 500ms somehow. Perhaps this is a hot take, but I don&rsquo;t think that&rsquo;s a reasonable trade-off for human readable files. Especially <a href="https://boehs.org/node/everything-i-know-about-the-xz-backdoor">given the recent XZ debacle</a>.</p>
+<p>Due to the file&rsquo;s binary nature, there&rsquo;s a lot you could hide in there. The <em>normalization</em> of a binary file being in a repo is what I think is concerning. people will overlook it more often just because the file is generally for bun. XZ&rsquo;s payload was achieved by embedding it into the test archives. You could insert a malicious payload into a <code>bun.lockb</code> file, and say it&rsquo;s just there because you use bun locally.</p>
+<p>A bit of a stretch, but its clearly possible as demonstrated by the XZ backdoor.</p>
+<p>I know bun offers a lot of other cool features which I haven&rsquo;t tried, but this has been my biggest gripe, a lockfile people can&rsquo;t interpret.</p>
+<p>There&rsquo;s been some <a href="https://github.com/oven-sh/bun/issues/5486">discussion about it on GitHub</a> where some solutions proposed having both a binary and text lockfile. I think this is quite acceptable, but they don&rsquo;t seem interested in implementing something like that.</p>
+<p>If this were to happen I would just commit only the text version, and gitignore the binary file, treating it similar to a build artifact.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="//localhost:1313/">Aspy&#39;s Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

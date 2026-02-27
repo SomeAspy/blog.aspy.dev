@@ -1,0 +1,43 @@
+diff --git a/layouts/_default/rss.xml b/layouts/_default/rss.xml
+index fed8ae9..b2397b3 100644
+--- a/layouts/_default/rss.xml
++++ b/layouts/_default/rss.xml
+@@ -1,4 +1,3 @@
+-{{- /* Deprecate site.Author.email in favor of site.Params.author.email */}}
+ {{- $authorEmail := "" }}
+ {{- with site.Params.author }}
+   {{- if reflect.IsMap . }}
+@@ -6,14 +5,8 @@
+       {{- $authorEmail = . }}
+     {{- end }}
+   {{- end }}
+-{{- else }}
+-  {{- with site.Author.email }}
+-    {{- $authorEmail = . }}
+-    {{- warnf "The author key in site configuration is deprecated. Use params.author.email instead." }}
+-  {{- end }}
+ {{- end }}
+ 
+-{{- /* Deprecate site.Author.name in favor of site.Params.author.name */}}
+ {{- $authorName := "" }}
+ {{- with site.Params.author }}
+   {{- if reflect.IsMap . }}
+@@ -23,11 +16,6 @@
+   {{- else }}
+     {{- $authorName  = . }}
+   {{- end }}
+-{{- else }}
+-  {{- with site.Author.name }}
+-    {{- $authorName = . }}
+-    {{- warnf "The author key in site configuration is deprecated. Use params.author.name instead." }}
+-  {{- end }}
+ {{- end }}
+ 
+ {{- $pctx := . }}
+@@ -80,4 +68,4 @@
+     {{- end }}
+     {{- end }}
+   </channel>
+-</rss>
++</rss>
+\ No newline at end of file

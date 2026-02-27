@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>PowerEdge R430 Setup | Aspy&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="
+I have recently acquired a PowerEdge R430 from a company called SpicketRiver Electronics. (Ebay link) I simply cannot recommend them enough. They are the same folks I got the R910 from, and when I had issues with both this server and the R910 their support was simply astounding.
+The server costed about $90 USD from them. Upon receiving it, I found a minor issues. the status LCD panel seemed to be shattered, and the DVD drive panel missing, which was not shown in the listing.">
+<meta name="author" content="">
+<link rel="canonical" href="//localhost:1313/posts/poweredge-r430-setup/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="//localhost:1313/favicon.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="//localhost:1313/posts/poweredge-r430-setup/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="//localhost:1313/" accesskey="h" title="Aspy&#39;s Blog (Alt + H)">Aspy&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      PowerEdge R430 Setup
+    </h1>
+    <div class="post-meta"><span title='2024-01-23 00:00:00 +0000 UTC'>January 23, 2024</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p><img alt="Picture of the R430 without the cover on" loading="lazy" src="/posts/poweredge-r430-setup/ServerTop.jpg"></p>
+<p>I have recently acquired a PowerEdge R430 from a company called <a href="https://spicketriverelectronics.com/">SpicketRiver Electronics</a>. (<a href="https://www.ebay.com/str/spicketriverenterprise">Ebay link</a>) I simply cannot recommend them enough. They are the same folks I got the R910 from, and when I had issues with both this server and the R910 their support was simply astounding.</p>
+<p>The server costed about $90 USD from them. Upon receiving it, I found a minor issues. the status LCD panel seemed to be shattered, and the DVD drive panel missing, which was not shown in the listing.</p>
+<p><img alt="The front LCD" loading="lazy" src="/posts/poweredge-r430-setup/IMG_0573.jpg"></p>
+<p>I contacted them with the issue, and within the hour they issued a $20 USD refund to cover the cost of a replacement. As I said, simply amazing support team. Regardless, the part to replace it is quite cheap. (<a href="https://www.ebay.com/itm/265265169542">Ebay listing</a>)</p>
+<p>Moving on from the minor issues, everything appeared to work great. It came with no HDD Caddies, and the ones from the R910 do not fit it, as the R910 used 2.5&quot; while this uses 3.5&quot;. Caddies seem to go for about $7-ish USD on Ebay, (<a href="https://www.ebay.com/itm/295772942605">Listing</a>) but I don&rsquo;t really plan to use spinning drives any time soon. I put a PCIe to NVMe adapter in and install Debian.</p>
+<p>However, as soon as I reboot, I find Debian cannot boot. Similar to the R910, it cannot (in it&rsquo;s current state) boot an NVMe drive over PCIe. So we move onto the next part, updating the firmware to (hopefully) support this.</p>
+<p>I boot into the Lifecycle Controller, and go to the firmware update panel. Dell for many years has served these updates over FTP. However, semi-recently they stopped doing this and moved all the update servers to HTTPS. I assumed this being a newer server would support this, but I was unable to find the HTTPS option. Odd.</p>
+<p>After checking the versions, it appears Dell added this functionality in version 2.63.60.61, while the server is on 2.06.05.05. It appears the server was last updated in 2015. In fact, checking the service tag, it appears the manufacture date was 2 days prior to these dates, showing the server was never updated by whoever originally owned it. Classic enterprise moment.</p>
+<p><img alt="This screenshot was taken after I figured out how to update the BIOS" loading="lazy" src="/posts/poweredge-r430-setup/image.png"></p>
+<p>So now we got to update the server. I started with the BIOS (for whatever reason) and it was fairly straightforward. I was able to find the latest BIOS <code>.efi</code> file on <a href="https://www.dell.com/support/product-details/en-us/product/poweredge-r430/drivers">Dell&rsquo;s support page</a>, and boot it using Ventoy. The only minor issue I had, was when I clicked to download the file, it displayed it as text in the browser. I kinda assumed it wouldn&rsquo;t work, but I just saved the page using <code>Ctrl+S</code> as a <code>.efi</code> file and it was fine. I suppose it makes sense there wouldn&rsquo;t be a MIME type for a <code>.efi</code> file</p>
+<p><img alt="I didn&rsquo;t have an iDRAC license properly setup at the time I did this, so I couldn&rsquo;t remote in for a screenshot" loading="lazy" src="/posts/poweredge-r430-setup/DellBIOSUpdaterCensored.jpg"></p>
+<p>At this point, I decide to update the iDRAC so I can connect to Dell&rsquo;s servers with HTTPS to update the rest of the servers firmware. However, do to the old version installed on the system, I was unable to connect with Firefox.</p>
+<p><img alt="Firefox complaining about the site&rsquo;s use of TLS 1.0" loading="lazy" src="/posts/poweredge-r430-setup/sslerror.png"></p>
+<p>Luckily, this was an easy fix on Firefox, as I could go to <code>about:config</code> and just override the minimum required TLS version.</p>
+<p><img alt="TLS minimum manually set to accept TLS 1.0" loading="lazy" src="/posts/poweredge-r430-setup/image-5.png"></p>
+<p>It was moderately more difficult to find the proper files, but I found them on <a href="https://www.dell.com/support/home/en-us/drivers/driversdetails?driverid=g79dw">their own support page</a>. The updater expects them to be formatted as a <code>.EXE</code> file for whatever reason. Upon trying to upload the file, I get an error about a missing iDRAC license file.</p>
+<p><img alt="LIC012: The license file does not exist. Re-import the license." loading="lazy" src="/posts/poweredge-r430-setup/LicenseDoesNotExist.png"></p>
+<p>This did not happen with my R910, which included a license. For whatever reason, it seems the license was removed from this server. Dell ships servers with the &ldquo;Basic&rdquo; license plan for the iDRAC, which has less features than the &ldquo;Express&rdquo; and &ldquo;Enterprise&rdquo; plans. However, this server doesn&rsquo;t even have a basic license, so I cannot interact with the iDRAC at all. I have contacted SpicketRiver, however as of writing, it is outside their business hours.
+<em>Update: SpicketRiver has responded they cannot do anything about it, as they received the server like this. In my opinion, this is fair enough.</em></p>
+<p>On the up side, Dell offers 30 day trials of enterprise licenses, <a href="https://www.dell.com/support/kbdoc/en-us/000176472/idrac-cmc-openmanage-enterprise-openmanage-integration-with-microsoft-windows-admin-center-openmanage-integration-with-servicenow-and-dpat-trial-licenses#TrialLicense-Agreement">available on their support page</a>.</p>
+<p><img alt="Dell&rsquo;s offering of trial licenses" loading="lazy" src="/posts/poweredge-r430-setup/image-1.png"></p>
+<p>After the 30 days this license will expire and a new trial license will not be able to be activated, but this gives me more than enough time to figure out the license problem. If worse comes to worst, I can just buy one on Ebay, where they go for about $20 USD.</p>
+<p>Moving onto actually updating the iDRAC, I find uploading the file takes a lot of time, so much in fact that I assumed it hung at first, but after waiting some time it finished processing.</p>
+<p><img alt="Uploading the new iDRAC firmware" loading="lazy" src="/posts/poweredge-r430-setup/LicenseUploading.png"></p>
+<p>After it uploads, I kinda get stuck for a while as it says:
+<code>RED023: Lifecycle Controller in use. This job will start when Lifecycle Controller is available.</code>
+So I try to log out, I restart the server, Log in, etc. and it still doesn&rsquo;t update. Luckily on the main page I found a small link that says &ldquo;Reset iDRAC&rdquo;, and it warns me all sessions will be closed, which seems like a good sign.</p>
+<p><img alt="iDRAC warning about resetting" loading="lazy" src="/posts/poweredge-r430-setup/image-3.png"></p>
+<p>At this point, the fans spin up, and after about a minute they slow down again as the iDRAC reboots. Upon logging in using the <a href="https://github.com/gethvi/iDRAC6VirtualConsoleLauncher">iDRAC6VirtualConsoleLauncher tool from GitHub</a> (BIG shout out to the owner and developer of this, <a href="https://github.com/gethvi">gethvi on GitHub</a>) I get a warning that certificates changed, which seems like a good sign. Since I have not yet rebooted the server, I get an error checking versions in the Lifecycle Controller.</p>
+<p><img alt="Checking the firmware version before rebooting the server after an update" loading="lazy" src="/posts/poweredge-r430-setup/image-6.png"></p>
+<p>So I issue the command to reboot the server and&hellip; It doesn&rsquo;t work. Huh. I tried to reboot the server and reset the iDRAC a few more times with no luck, even completely disconnecting power. It looks like it&rsquo;s time to switch gears.</p>
+<p>Instead of downloading the <code>.EXE</code> file I boot into Debian live from my Ventoy drive and mount the data partition of the drive which I downloaded the <code>.bin</code> version of the updater for Linux from the page mentioned earlier. From the start, it&rsquo;s already looking optimistic.</p>
+<p><img alt="The updater script from dell running on Debian live" loading="lazy" src="/posts/poweredge-r430-setup/image-7.png"></p>
+<p>Notably, after the script is done, I can no longer connect using the earlier mentioned iDRAC virtual console launcher tool. Additionally, Firefox is no longer spewing TLS deprecation warnings into the console for every URL loaded from iDRAC. At this point, the TLS requirement can be reset to 3. It looks like in version 2.30.30.30, an HTML5 implementation of the java virtual console was added. Sounds cool!</p>
+<p>The HTML5 console can be enabled by going to Overview&gt;Server&gt;Virtual Console and changing the dropdown for Plug-in Type from Native to HTML5. I had to change it to Java first before HTML5 showed up as an option. Once enabled, in the overview, you can click Launch and bring it up.</p>
+<p><img alt="The HTML5 Virtual Console" loading="lazy" src="/posts/poweredge-r430-setup/image-8.png"></p>
+<p>The image is a lot worse, but I suppose it&rsquo;s better than having to use Java&hellip; Maybe? I think the Java one was more feature rich, but there is much less latency in the HTML5 version. Maybe I&rsquo;ll make an Electron app for it, because the world just needs more Electron apps <em>(This is a joke I promise)</em></p>
+<p>Regardless, we now have the HTTPS update option!</p>
+<p><img alt="HTTPS added as a firmware update option" loading="lazy" src="/posts/poweredge-r430-setup/image-9.png"></p>
+<p>Much easier than having to find all the packages yourself and installing them.</p>
+<p><img alt="The Lifecycle Controller installing firmware updates" loading="lazy" src="/posts/poweredge-r430-setup/image-11.png"></p>
+<p>In the end, all that was lost were dates, and my time.</p>
+<p><img alt="All firmware items are up to date, with some reset dates." loading="lazy" src="/posts/poweredge-r430-setup/image-12.png"></p>
+<h2 id="in-conclusion">In conclusion<a hidden class="anchor" aria-hidden="true" href="#in-conclusion">#</a></h2>
+<p>This could have been done one by one, as I did in the R910 BIOS upgrade post. I think I learned a lot more here than I would have just running the scripts. Additionally, I like just ranting about things I do. This will certainly not be the the last update about this specific server.</p>
+<p><em>P.S. The NVMe drive still cannot be natively booted by the server. You win some and you lose some.</em></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="//localhost:1313/">Aspy&#39;s Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

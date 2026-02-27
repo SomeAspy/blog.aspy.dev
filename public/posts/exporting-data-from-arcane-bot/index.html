@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="auto">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Exporting data from Arcane Bot | Aspy&#39;s Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="
+The Arcane Discord bot (often used for leveling in servers) offers no way to export level data for switching to another bot.
+It&rsquo;s quite simple, in a round-a-bout way.
+Don&rsquo;t tell anyone from Arcane, or they will ban you, but otherwise, they have no way of telling ;)
+
+Why?
+I wanted to switch Discord bots for level roles. Specifically to https://xela.dev/ (Amazing team, by the way)">
+<meta name="author" content="">
+<link rel="canonical" href="//localhost:1313/posts/exporting-data-from-arcane-bot/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="//localhost:1313/favicon.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="//localhost:1313/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="//localhost:1313/favicon-32x32.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+<link rel="mask-icon" href="//localhost:1313/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="//localhost:1313/posts/exporting-data-from-arcane-bot/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --code-block-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+                color-scheme: dark;
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .toc {
+                background: var(--entry);
+            }
+        }
+
+        @media (prefers-color-scheme: light) {
+            .list::-webkit-scrollbar-thumb {
+                border-color: var(--code-bg);
+            }
+        }
+
+    </style>
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="//localhost:1313/" accesskey="h" title="Aspy&#39;s Blog (Alt + H)">Aspy&#39;s Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Exporting data from Arcane Bot
+    </h1>
+    <div class="post-meta"><span title='2025-04-17 00:00:00 +0000 UTC'>April 17, 2025</span>
+
+</div>
+  </header> 
+  <div class="post-content"><p><img alt="Arcane kinda sucks&hellip;" loading="lazy" src="/posts/exporting-data-from-arcane-bot/arcane-static.png"></p>
+<p>The Arcane Discord bot (often used for leveling in servers) offers no way to export level data for switching to another bot.</p>
+<p>It&rsquo;s quite simple, in a round-a-bout way.</p>
+<p>Don&rsquo;t tell anyone from Arcane, or they will ban you, but otherwise, <em><strong>they have no way of telling ;)</strong></em></p>
+<p><img alt="Arcane staff got pissy when I told people how to do this" loading="lazy" src="/posts/exporting-data-from-arcane-bot/Larcane.png"></p>
+<h2 id="why">Why?<a hidden class="anchor" aria-hidden="true" href="#why">#</a></h2>
+<p>I wanted to switch Discord bots for level roles. Specifically to <a href="https://xela.dev/">https://xela.dev/</a> (Amazing team, by the way)</p>
+<p>Turns out, Arcane has no way of requesting data for your server. So, I decided to take it into my own hands.</p>
+<h2 id="how">How?<a hidden class="anchor" aria-hidden="true" href="#how">#</a></h2>
+<p>Arcane has a leader board for viewing top levels online. This will be our data source.</p>
+<p>The site is reactive, and you cannot save the HTML and get the data too.
+So, we need to run a script in the console, to make it easy.</p>
+<p>Full disclaimer, I used Google Gemini to put this code together, as I am simply lazy, and <a href="https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags">don&rsquo;t wanna parse HTML with RegEx</a>.</p>
+<p>Anyway, into the fun stuff.</p>
+<p>I wanted to convert this data from HTML to a JSON, following the structure the <a href="https://lurkr.gg/docs/guides/exporting-leveling-leaderboard">Lurkr Discord bot</a> uses. Mainly, because it works with Xela&rsquo;s import function. Nonetheless, it is a simple format.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Level</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">avatar</span>: <span style="color:#66d9ef">string</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">level</span>: <span style="color:#66d9ef">number</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">messageCount</span>: <span style="color:#66d9ef">number</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">tag</span>: <span style="color:#66d9ef">string</span> <span style="color:#f92672">|</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">userId</span>: <span style="color:#66d9ef">string</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">xp</span>: <span style="color:#66d9ef">number</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Export</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#a6e22e">levels</span>: <span style="color:#66d9ef">Level</span>[];
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Upon inspecting the source code for the online leaderboard, I found that &ldquo;entries&rdquo; generally follow the following format:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;box box-hover&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;margin-bottom: 10px;&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;display: flex; gap: 10px; align-items: center;&#34;</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;has-text-centered&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;is-size-5 has-text-weight-semibold&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color: rgb(255, 255, 255);&#34;</span>&gt;6. &lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">figure</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image&#34;</span>&gt;&lt;<span style="color:#f92672">img</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;is-rounded&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width: 34px; height: 34px;&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.discordapp.com/avatars/516750892372852754/ad85e1d3cfd20968ef993a520d8c251f.png?size=128&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;this.src = &#39;https://cdn.discordapp.com/embed/avatars/&#39; + Math.round(Math.random() * (1 - 1) + 1) + &#39;.png&#39;&#34;</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#a6e22e">loading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lazy&#34;</span>&gt;&lt;/<span style="color:#f92672">figure</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;has-text-white is-size-5 has-text-weight-semibold&#34;</span>&gt;@someaspy&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;flex-grow: 2;&#34;</span>&gt;&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;has-text-white is-size-5 has-text-weight-semibold&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;min-width: 50px; max-width: 50px;&#34;</span>&gt;67&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;has-text-white is-size-5 has-text-weight-semibold hide-mobile&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;min-width: 100px; max-width: 100px;&#34;</span>&gt;232.7K&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;has-text-white is-size-5 has-text-weight-semibold&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;min-width: 50px; max-width: 50px;&#34;</span>&gt;20.2K&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;has-text-white is-size-5 has-text-weight-semibold hide-mobile&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;min-width: 50px; max-width: 50px;&#34;</span>&gt;-&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>        &lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;has-text-white is-size-5 has-text-weight-semibold hide-mobile&#34;</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;min-width: 50px; max-width: 50px;&#34;</span>&gt;-&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>    &lt;/<span style="color:#f92672">div</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
+</span></span></code></pre></div><p>This is workable.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>  &lt;<span style="color:#f92672">h1</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;is-size-5 has-text-weight-semibold&#34;</span> <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;color: rgb(255, 255, 255);&#34;</span>&gt;6. &lt;/<span style="color:#f92672">h1</span>&gt;
+</span></span></code></pre></div><p>The next meaningful part of the HTML is the profile picture:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">figure</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;image&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  &lt;<span style="color:#f92672">img</span>  <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;is-rounded&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;width: 34px; height: 34px;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">src</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://cdn.discordapp.com/avatars/516750892372852754/ad85e1d3cfd20968ef993a520d8c251f.png?size=128&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">onerror</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;this.src = &#39;https://cdn.discordapp.com/embed/avatars/&#39; + Math.round(Math.random() * (1 - 1) + 1) + &#39;.png&#39;&#34;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#a6e22e">loading</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;lazy&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">figure</span>&gt;
+</span></span></code></pre></div><p>from this, we can extract the profile picture itself, and the user ID, <code>516750892372852754</code> in my case.</p>
+<p>The next piece of data is the user&rsquo;s handle:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;has-text-white is-size-5 has-text-weight-semibold&#34;</span>&gt;@someaspy&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><p>and then, we have some seemingly unlabeled numbers.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;has-text-white is-size-5 has-text-weight-semibold&#34;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;min-width: 50px; max-width: 50px;&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>    67
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;has-text-white is-size-5 has-text-weight-semibold hide-mobile&#34;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;min-width: 100px; max-width: 100px;&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  232.7K
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span><span style="display:flex;"><span>&lt;<span style="color:#f92672">p</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;has-text-white is-size-5 has-text-weight-semibold&#34;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#a6e22e">style</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;min-width: 50px; max-width: 50px;&#34;</span>&gt;
+</span></span><span style="display:flex;"><span>  20.2K
+</span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">p</span>&gt;
+</span></span></code></pre></div><p>In order of appearance, <code>67</code> is the user&rsquo;s actual level. <code>232.7K</code> is the amount of XP the user has, and then <code>20.2K</code> is the message count.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;avatar&#34;</span>: <span style="color:#e6db74">&#34;ad85e1d3cfd20968ef993a520d8c251f&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;level&#34;</span>: <span style="color:#ae81ff">67</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;messageCount&#34;</span>: <span style="color:#ae81ff">20200</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;tag&#34;</span>: <span style="color:#e6db74">&#34;someaspy&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;userId&#34;</span>: <span style="color:#e6db74">&#34;516750892372852754&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;xp&#34;</span>: <span style="color:#ae81ff">232700</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>And that&rsquo;s about it!</p>
+<p>Using the script is super easy too:</p>
+<ol>
+<li>Load all leaderboard entries (anything not loaded will not be captured!)</li>
+<li>Run the script</li>
+<li>Copy the output</li>
+</ol>
+<p><a href="https://gist.github.com/SomeAspy/2b27a6d66b97db6bd1b62afac5343285">https://gist.github.com/SomeAspy/2b27a6d66b97db6bd1b62afac5343285</a></p>
+<p>However, the free tier of Arcane only shows up to 100 users on the leaderboard.
+Without looking too much into it, I didn&rsquo;t see a way around this.
+I just coughed up the $5.75 to get premium, and then loaded the entire leaderboard. <strong>Afterward, make sure you cancel it, and request a refund.</strong></p>
+<h2 id="pitfalls">Pitfalls<a hidden class="anchor" aria-hidden="true" href="#pitfalls">#</a></h2>
+<p>If a user is not in the server, their profile picture will not be cached.
+Thus, there is no way to get their ID or avatar. for simplicity, we simply skip over these users. This also probably (???) applies to users with the default avatar. I haven&rsquo;t checked.</p>
+<h2 id="tldr">TLDR<a hidden class="anchor" aria-hidden="true" href="#tldr">#</a></h2>
+<ol>
+<li>Load all leaderboard entries on the online leaderboard (You can get a link to it using /leaderboard in your Discord server with Arcane Free tier is limited to 100 entries. Pay, cancel, and refund if you need to.</li>
+<li>Run the script (<a href="https://gist.github.com/SomeAspy/2b27a6d66b97db6bd1b62afac5343285">https://gist.github.com/SomeAspy/2b27a6d66b97db6bd1b62afac5343285</a>) in the browser console.</li>
+<li>Copy and save JSON output.</li>
+</ol>
+<p>There is no way for Arcane to detect this, but if you directly tell them what you are doing you will get banned!</p>
+<p>Good luck! If you decide to go with Xela, mention my blog post!</p>
+<h3 id="ps-fuck-you-arcane-staff-team-">P.S: Fuck you Arcane staff team ❤️<a hidden class="anchor" aria-hidden="true" href="#ps-fuck-you-arcane-staff-team-">#</a></h3>
+<h3 id="pps-if-my-script-doesnt-work-anymore-just-go-into-the-developer-menu-usually-f12-and-copy-paste-the-html-into-chatgpt-or-gemini-and-ask-it-to-make-a-script-yeah-i-hate-ai-but-i-also-hate-monotonous-work-and-lock-in">P.P.S: If my script doesn&rsquo;t work anymore, just go into the developer menu (usually F12) and copy paste the HTML into chatgpt or gemini, and ask it to make a script. Yeah, I hate AI, but I also hate monotonous work and lock-in<a hidden class="anchor" aria-hidden="true" href="#pps-if-my-script-doesnt-work-anymore-just-go-into-the-developer-menu-usually-f12-and-copy-paste-the-html-into-chatgpt-or-gemini-and-ask-it-to-make-a-script-yeah-i-hate-ai-but-i-also-hate-monotonous-work-and-lock-in">#</a></h3>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="//localhost:1313/">Aspy&#39;s Blog</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            html.dataset.theme = 'dark';
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

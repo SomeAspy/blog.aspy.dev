@@ -4,10 +4,89 @@
     <title>Posts on Aspy&#39;s Blog</title>
     <link>//localhost:1313/posts/</link>
     <description>Recent content in Posts on Aspy&#39;s Blog</description>
-    <generator>Hugo -- 0.155.3</generator>
+    <generator>Hugo -- 0.156.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 28 Dec 2023 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 13 Apr 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>My Gripes with Bun&#39;s Binary Lockfile</title>
+      <link>//localhost:1313/posts/bun-lockfile-issues/</link>
+      <pubDate>Sat, 13 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/bun-lockfile-issues/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;Bun logo, with a frown&#34; loading=&#34;lazy&#34; src=&#34;//localhost:1313/posts/bun-lockfile-issues/logo.svg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This isn&amp;rsquo;t a deep dive into the workings of Bun, and I haven&amp;rsquo;t worked with it at all really. This is just my opinion on it after stumbling across a project that uses it, and playing with it a bit.&lt;/p&gt;
+&lt;p&gt;The project I&amp;rsquo;m gonna be referencing its usage in &lt;a href=&#34;https://github.com/zS1L3NT/ts-npm-ytmusic-api/&#34;&gt;YTMusic API by Zechariah&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;First thing I do is &lt;code&gt;bun install&lt;/code&gt; which seems to update the lockfile for whatever reason.
+Sometimes this is normal. Lets take a look.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Stale Friends</title>
+      <link>//localhost:1313/posts/stale-friends/</link>
+      <pubDate>Thu, 04 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/stale-friends/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;Drawn image of the discord logo, with a split through it&#34; loading=&#34;lazy&#34; src=&#34;//localhost:1313/posts/stale-friends/brokencord.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;as-of-writing-i-have-627-friends-on-discord-six-hundred-twenty-seven&#34;&gt;As of writing, I have 627 friends on discord. Six. Hundred. Twenty. Seven&lt;/h2&gt;
+&lt;p&gt;One may ask, how can I maintain so many friendships? It&amp;rsquo;s quite simple: I don&amp;rsquo;t. So then why are they still on my friends list?&lt;/p&gt;
+&lt;p&gt;I have all these friends online, but some I don&amp;rsquo;t even talk to anymore. Haven&amp;rsquo;t talked to in years. Some I&amp;rsquo;ve even forgotten and don&amp;rsquo;t recognize.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Intel WiFi with AMD Processors</title>
+      <link>//localhost:1313/posts/intel-cnvi/</link>
+      <pubDate>Fri, 15 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/intel-cnvi/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;Intel unmarked networking chips&#34; loading=&#34;lazy&#34; src=&#34;//localhost:1313/posts/intel-cnvi/intel-wifi-678_678x452.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;This short post begins with my constant problems with network on my desktop. For a long while it&amp;rsquo;s had issues due to its placement in my house. My room is quite far from the router, and has no Ethernet jack. WiFi drops constantly, so I bought a Ethernet over power line adapter–one of those things that you have 2 of, once at the source and another where you want Ethernet. The problem with these is they can be quite slow. Bleh.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>YouTube Music Scrobbling on iOS</title>
+      <link>//localhost:1313/posts/youtube-music-scrobbling-on-ios/</link>
+      <pubDate>Thu, 14 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/youtube-music-scrobbling-on-ios/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;LastFM + Youtube Music&#34; loading=&#34;lazy&#34; src=&#34;//localhost:1313/posts/youtube-music-scrobbling-on-ios/7bac66da-ed71-48aa-9612-73cb587d5018.png&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;part-2&#34;&gt;Part 2: &lt;a href=&#34;https://blog.aspy.dev/youtube-music-ios-scrobbling-part-2/&#34;&gt;https://blog.aspy.dev/youtube-music-ios-scrobbling-part-2/&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;I&amp;rsquo;ve been scrobbling to Last.FM for a while from Desktop. Originally using &lt;a href=&#34;https://github.com/ytmdesktop/ytmdesktop/&#34;&gt;YTMDesktop from the YTMDesktop org on GitHub&lt;/a&gt; I eventually switched to &lt;a href=&#34;https://github.com/pear-devs/pear-desktop&#34;&gt;th-ch&amp;rsquo;s YouTube Music app&lt;/a&gt;, both of which had support Last.FM. However, this left a gaping hole in scrobbling, and that is mobile.&lt;/p&gt;
+&lt;p&gt;While there are apps to do this for Android (Which I will not list, as I am not an Android user, and don&amp;rsquo;t want to recommend something I don&amp;rsquo;t use) iOS does not have any such apps in the app store. Even if they were available to sideload, Apple makes sideloading a massive pain.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>PowerEdge R430 Setup</title>
+      <link>//localhost:1313/posts/poweredge-r430-setup/</link>
+      <pubDate>Tue, 23 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/poweredge-r430-setup/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;Picture of the R430 without the cover on&#34; loading=&#34;lazy&#34; src=&#34;//localhost:1313/posts/poweredge-r430-setup/ServerTop.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I have recently acquired a PowerEdge R430 from a company called &lt;a href=&#34;https://spicketriverelectronics.com/&#34;&gt;SpicketRiver Electronics&lt;/a&gt;. (&lt;a href=&#34;https://www.ebay.com/str/spicketriverenterprise&#34;&gt;Ebay link&lt;/a&gt;) I simply cannot recommend them enough. They are the same folks I got the R910 from, and when I had issues with both this server and the R910 their support was simply astounding.&lt;/p&gt;
+&lt;p&gt;The server costed about $90 USD from them. Upon receiving it, I found a minor issues. the status LCD panel seemed to be shattered, and the DVD drive panel missing, which was not shown in the listing.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>(Legally) Getting PlotSquared for Free</title>
+      <link>//localhost:1313/posts/plotsquared-free/</link>
+      <pubDate>Mon, 08 Jan 2024 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/plotsquared-free/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;Example of a plot world&#34; loading=&#34;lazy&#34; src=&#34;//localhost:1313/posts/plotsquared-free/Screenshot_20240108_183217.png&#34;&gt;&lt;/p&gt;
+&lt;p&gt;I like to help people host small servers, often for free for small friend groups. To me at least, it doesn&amp;rsquo;t make sense to pay the €15 for small servers. (&lt;a href=&#34;https://www.spigotmc.org/resources/plotsquared-v7.77506/&#34;&gt;PlotSquared can be purchased on Spigot&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;If you are hosting medium to larger sized servers and can afford it, you totally should support the software you use!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/IntellectualSites/PlotSquared&#34;&gt;https://github.com/IntellectualSites/PlotSquared&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Regardless, the choice is up to you. This also allows you to use bleeding edge git builds.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Avoid UGREEN Products!</title>
+      <link>//localhost:1313/posts/avoid-ugreen/</link>
+      <pubDate>Sat, 30 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/avoid-ugreen/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;Lenovo ThinkPad failing to charge on a UGREEN 100W power brick&#34; loading=&#34;lazy&#34; src=&#34;//localhost:1313/posts/avoid-ugreen/lowwattage_cropped.webp&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;update-122025&#34;&gt;Update, 12/20/25&lt;/h2&gt;
+&lt;p&gt;In the time since I&amp;rsquo;ve posted this, I worked at Salem Techsperts for about a year.
+I&amp;rsquo;ve found that UGREEN is actually a moderately reputable brand, and I just got unlucky getting a defective unit. Additionally, Mozilla FakeSpot no longer exists. In fact, at this time, my main charger cable (not brick) is a UGREEN USB C cable.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Laptop RAM Woes</title>
+      <link>//localhost:1313/posts/laptop-ram-woes/</link>
+      <pubDate>Thu, 28 Dec 2023 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/posts/laptop-ram-woes/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;Gloved hand holding a laptop RAM stick&#34; loading=&#34;lazy&#34; src=&#34;//localhost:1313/posts/laptop-ram-woes/How_much_memory_need_for_laptop.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Laptop RAM is a pain point for me. I&amp;rsquo;ve inexplicably never had a RAM upgrade work right out of the box for a laptop&amp;hellip; Maybe I&amp;rsquo;m just unlucky. I&amp;rsquo;ve never had this happen on desktop though.&lt;/p&gt;
+&lt;h2 id=&#34;part-1-hp-envy-x360&#34;&gt;Part 1: HP Envy x360&lt;/h2&gt;
+&lt;p&gt;This starts with an &lt;a href=&#34;https://support.hp.com/us-en/document/c06449252&#34;&gt;HP Envy x360 Laptop (15m-dr1012dx)&lt;/a&gt;. The device came with 12GB of DDR4 RAM at 2666MHz. (A 4GB and 8GB stick)&lt;/p&gt;</description>
+    </item>
     <item>
       <title>What Is This Blog For?</title>
       <link>//localhost:1313/posts/what-is-this-blog-for/</link>
