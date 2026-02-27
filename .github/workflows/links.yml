@@ -26,7 +26,7 @@ jobs:
               uses: lycheeverse/lychee-action@v2
               with:
                   fail: false
-                  args: content/**/*.md" --cache --max-cache-age 1d
+                  args: content/**/*.md --cache --max-cache-age 1d
 
             - name: Create Issue From File
               if: steps.lychee.outputs.exit_code != 0
