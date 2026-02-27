@@ -18,11 +18,11 @@ This is obviously pushes on the keywords you might search trying to figure out t
 
 Why I did this? I couldn't find any reasonable results when I was trying to figure this out. So I went ahead and fixed that.
 
-![As you can see, my idea worked.](./adblockmoment.png)
+![As you can see, my idea worked.](./adblockmoment.webp)
 
 I also made a longer format blog post about it, without the SEO optimizations to boost it to the top of search. However, I made them separate so the SEO optimized one will be straight to the point with extra details linking to official support articles, which is how I like my answers.
 
-![The entire content of the SEO pushed post](./adblockpost.png)
+![The entire content of the SEO pushed post](./adblockpost.webp)
 
 This is the other article I made addressing this point, without the SEO optimizations, so I put some more content or "fluff" in it knowing someone probably isn't gonna be skimming this for an answer.
 

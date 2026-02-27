@@ -54,25 +54,25 @@ UGREEN's charging speed was extremely inconsistent, but in almost every case ext
 
 ![In most cases, the estimated charging time was about 6 1/2 hours ](./ugreen6h.webp)
 
-![At times, charging using it would completely halt](./ugreennotcharging.png)
+![At times, charging using it would completely halt](./ugreennotcharging.webp)
 
 ## [Steam Deck 45 Watt Charger](https://www.ifixit.com/products/steam-deck-and-steam-deck-oled-ac-adapter-us)
 
 The charger that came with the Steam Deck always outperformed the 100 watt charger, despite having 55% less output.
 
-![Reported charging time of 4 hours](./steamdeck4h.png)
+![Reported charging time of 4 hours](./steamdeck4h.webp)
 
 ## [Apple 20 Watt Charger](https://www.apple.com/shop/product/mwvv3am/a/20w-usb-c-power-adapter)
 
 The 20 watt charger that Apple uses for phone and watch charging generally offered the same charge speed as the 100 watt charger from UGREEN. I think this says a lot about the UGREEN charger.
 
-![Apple's 20W phone charger offering the same charging power as UGREEN's 100W charger](./Apple7h.png)
+![Apple's 20W phone charger offering the same charging power as UGREEN's 100W charger](./Apple7h.webp)
 
 ## [Anker 65 Watt Charger](https://www.amazon.com/gp/product/B08T5QN2TR)
 
 Out of the box, it immediately strikes me that this is a very dense and small charger. Regardless, letting my laptop drain to 12% for the tests again reveals amazing and fairly consistent (+/-20 minutes) charging times.
 
-![The Anker 65W charger reporting a charging time of just under 2 hours](./Screenshot_20240101_151340.png)
+![The Anker 65W charger reporting a charging time of just under 2 hours](./Screenshot_20240101_151340.webp)
 
 The screenshots were all made using a certified 100W USB C PD cable from a reputable brand. (Anker) The exception being the Steam Deck charger, which has its cable permanently attached to the brick.
 
@@ -86,17 +86,17 @@ If you've watched Louis Rossmann's video (linked earlier) this should make sense
 
 [Mozilla has created FakeSpot, an AI powered tool for analyzing fake reviews on products](https://blog.mozilla.org/en/mozilla/building-whats-next/). Across the board, You can see a poor FakeSpot grade on most products from UGREEN, which usually indicates review tampering.
 
-![FakeSpot rating several of UGREEN's chargers as D or below.](./fakespotUGREEN.png)
+![FakeSpot rating several of UGREEN's chargers as D or below.](./fakespotUGREEN.webp)
 
 You can check out the FakeSpot result page of the 100W charger I bought below. As of time of writing it has a C.
 
 [Included here was a link to the FakeSpot page for this device, which no longer exists]
 
-![FakeSpot indicating high levels of tampering](./image-29.png)
+![FakeSpot indicating high levels of tampering](./image-29.webp)
 
 On the other hand, you can see much better grades on brand name products which there are not many of, as both [Amazon Brand Filter](https://github.com/chris-mosley/AmazonBrandFilter) (An extension to remove no-name brands from amazon results) and FakeSpot are filtering the page.
 
-![Amazon Brand Filter running](./image-31.png)
+![Amazon Brand Filter running](./image-31.webp)
 
 Of course, I don't blame you if you don't believe the arbitrary ratings of this tool you probably just heard of.
 Let's go to Reddit instead!
@@ -111,7 +111,7 @@ A few of the pain points about the UGREEN chargers for the members of the subred
 
 With that being said, upon inspecting my charger I got from UGREEN, neither the packaging nor the brick itself have any sort of UL or ETL certification logo. You can find one of these logos on just about anything that plugs into the wall.
 
-![There are various other logos, but none for the ETL or UL](./UgreenMissingCerts.jpg)
+![There are various other logos, but none for the ETL or UL](./UgreenMissingCerts.webp)
 
 There is also a post with a massive run down of deceptive specifications on their chargers, but it's about 3 years old at time of writing, so I'm not really taking it into account. [You can check it out if you want though.](https://www.reddit.com/r/UsbCHardware/comments/j29agr/ugreen_65w_3c1a_beware/)
 
@@ -119,4 +119,4 @@ Apparently at one point, the subreddit even had a warning against UGREEN specifi
 
 Overall, from the subreddit it seems to be a vague "no" according to a [more recent post](https://www.reddit.com/r/UsbCHardware/comments/13v321u/ugreen/).
 
-![https://www.reddit.com/r/UsbCHardware/comments/13v321u/comment/jm3tpt7](./image-32.png)
+![https://www.reddit.com/r/UsbCHardware/comments/13v321u/comment/jm3tpt7](./image-32.webp)

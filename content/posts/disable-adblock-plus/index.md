@@ -4,7 +4,7 @@ draft = false
 title = 'Disable AdBlock Plus first run popup using suppress_first_run_page'
 +++
 
-![Zoomed screenshot of option](./zoomed.png)
+![Zoomed screenshot of option](./zoomed.webp)
 
 ## This is pretty quick and easy
 

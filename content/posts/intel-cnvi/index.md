@@ -4,7 +4,7 @@ draft = false
 title = 'Intel WiFi with AMD Processors'
 +++
 
-![Intel unmarked networking chips](./intel-wifi-678_678x452.jpg)
+![Intel unmarked networking chips](./intel-wifi-678_678x452.webp)
 
 This short post begins with my constant problems with network on my desktop. For a long while it's had issues due to its placement in my house. My room is quite far from the router, and has no Ethernet jack. WiFi drops constantly, so I bought a Ethernet over power line adapter–one of those things that you have 2 of, once at the source and another where you want Ethernet. The problem with these is they can be quite slow. Bleh.
 
@@ -16,4 +16,4 @@ After more frustration, time, effort, and swaps than I would like to admit, I've
 
 It's actually quite easy to recognize these! Chips requiring CNVi will be keyed with M.2 E, while those that do not require CNVi will be keyed as M.2 A+E.
 
-![Comparison of A+E keyed adapters (left) vs E keyed adapters (right)](./wifi-adapters-markup.jpg)
+![Comparison of A+E keyed adapters (left) vs E keyed adapters (right)](./wifi-adapters-markup.webp)

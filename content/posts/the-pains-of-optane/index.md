@@ -4,7 +4,7 @@ draft = false
 title = 'The Pains of Optane'
 +++
 
-![A stick of Optane, combined with a terabyte of SSD general storage](./optane.jpg)
+![A stick of Optane, combined with a terabyte of SSD general storage](./optane.webp)
 
 ## This is not a guide on how to recover data from Optane, I was never able to figure it out
 

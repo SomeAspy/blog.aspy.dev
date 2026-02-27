@@ -4,7 +4,7 @@ draft = false
 title = 'YouTube Music Scrobbling on iOS'
 +++
 
-![LastFM + Youtube Music](./7bac66da-ed71-48aa-9612-73cb587d5018.png)
+![LastFM + Youtube Music](./7bac66da-ed71-48aa-9612-73cb587d5018.webp)
 
 ## Part 2: <https://blog.aspy.dev/youtube-music-ios-scrobbling-part-2/>
 
@@ -21,7 +21,7 @@ At first, there were a few issues (namely, incorrectly scrobbling songs again af
 
 After setting it up, it runs a small web server to serve a GUI. From here, you can control the scrobbling services and login to Last.FM (Which you will need to [create a developer application for, but it isn't that hard](https://www.last.fm/api))
 
-![Multi Scrobbler web GUI](./image.png)
+![Multi Scrobbler web GUI](./image.webp)
 
 ~~The next problem I ran into is the fact that (in my case) this is a publicly accessible URL. I couldn't just close it, because Last.FM needs to callback URL to authenticate with Multi Scrobbler. I ended up protecting it with [Cloudflare Access](https://www.cloudflare.com/sase/products/access/), which was super simple to setup! I also didn't have to worry about whitelisting the callback URL, as this will only be hit by the client. (which would have to be authorized via CF Access to start the Last.FM authorization flow anyway)~~
 
@@ -31,4 +31,4 @@ The maintainer of Multi Scrobbler [let me know](https://github.com/FoxxMD/multi-
 
 Since in my case, I am running this on an external network and server ([Hetzner](https://www.hetzner.com/)) I decided to go with CloudFlare access. but you totally could set up something with Tailscale. (Something I am only recently starting to use)
 
-![Cloudflare access sign-in page](./image-2.png)
+![Cloudflare access sign-in page](./image-2.webp)

@@ -13,7 +13,7 @@ The project I'm gonna be referencing its usage in [YTMusic API by Zechariah](htt
 First thing I do is `bun install` which seems to update the lockfile for whatever reason.
 Sometimes this is normal. Lets take a look.
 
-![Binary file diff](./image-2.png)
+![Binary file diff](./image-2.webp)
 
 Oops! It's a binary file.
 

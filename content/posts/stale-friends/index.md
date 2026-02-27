@@ -4,7 +4,7 @@ draft = false
 title = 'Stale Friends'
 +++
 
-![Drawn image of the discord logo, with a split through it](./brokencord.png)
+![Drawn image of the discord logo, with a split through it](./brokencord.webp)
 
 ## As of writing, I have 627 friends on discord. Six. Hundred. Twenty. Seven
 

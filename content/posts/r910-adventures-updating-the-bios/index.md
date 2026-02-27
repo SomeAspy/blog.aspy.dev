@@ -14,11 +14,11 @@ I have started by creating a USB stick formatted with FAT16, as this appears to 
 
 To get to the updater, when you get a display output, and given the option in the top right corner, press F11. From there, it should continue the boot process but stop at the boot manager. At the boot manager, select "System Utilities" and then "System Services" and enter "y". The system will then reboot.
 
-![The Dell lifecycle controller UI](./configurator.png)
+![The Dell lifecycle controller UI](./configurator.webp)
 
 Once in the configurator, Go to "Platform Update" and launch the updater.
 
-![The Dell Platform Update UI](./updateserver.png)
+![The Dell Platform Update UI](./updateserver.webp)
 
 I selected Local drive, but other options are available. I then selected the USB, and entered `BIOS.exe`, which should be the desired file. There is some sort of verification that goes on (I had it fail on some other files I tried, which I thought were the correct ones)
 
@@ -36,13 +36,13 @@ Upon using the linked 2.5 version, a popup appears stating this is not a dell-au
 
 [There is a bin file available](https://www.dell.com/support/home/en-us/drivers/driversdetails?driverid=ncwjf&oscode=biosa&productcode=poweredge-r910), which is apparently for Linux, and furthermore, it appears it is possible to directly run bin files on Linux, so I'm gonna try that.
 
-![update tool](./updatetool.png)
+![update tool](./updatetool.webp)
 
 Indeed, that does appear to be the correct way to do it.
 
 Upon running the bin file with `sudo bash`, it starts logging output. looking good so far!
 
-![update tool loading](./update.png)
-![update tool confirm](./updateconfirm.png)
+![update tool loading](./update.webp)
+![update tool confirm](./updateconfirm.webp)
 
 The BIOS now seems to be updated.

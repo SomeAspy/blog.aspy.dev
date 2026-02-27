@@ -4,7 +4,7 @@ draft = false
 title = "Exporting data from Arcane Bot"
 +++
 
-![Arcane kinda sucks...](./arcane-static.png)
+![Arcane kinda sucks...](./arcane-static.webp)
 
 The Arcane Discord bot (often used for leveling in servers) offers no way to export level data for switching to another bot.
 
@@ -12,7 +12,7 @@ It's quite simple, in a round-a-bout way.
 
 Don't tell anyone from Arcane, or they will ban you, but otherwise, ***they have no way of telling ;)***
 
-![Arcane staff got pissy when I told people how to do this](./Larcane.png)
+![Arcane staff got pissy when I told people how to do this](./Larcane.webp)
 
 ## Why?
 
@@ -55,8 +55,8 @@ Upon inspecting the source code for the online leaderboard, I found that "entrie
     <div style="display: flex; gap: 10px; align-items: center;" class="has-text-centered">
         <h1 class="is-size-5 has-text-weight-semibold" style="color: rgb(255, 255, 255);">6. </h1>
         <figure class="image"><img class="is-rounded" style="width: 34px; height: 34px;"
-                src="https://cdn.discordapp.com/avatars/516750892372852754/ad85e1d3cfd20968ef993a520d8c251f.png?size=128"
-                onerror="this.src = 'https://cdn.discordapp.com/embed/avatars/' + Math.round(Math.random() * (1 - 1) + 1) + '.png'"
+                src="https://cdn.discordapp.com/avatars/516750892372852754/ad85e1d3cfd20968ef993a520d8c251f.webp?size=128"
+                onerror="this.src = 'https://cdn.discordapp.com/embed/avatars/' + Math.round(Math.random() * (1 - 1) + 1) + '.webp'"
                 loading="lazy"></figure>
         <p class="has-text-white is-size-5 has-text-weight-semibold">@someaspy</p>
         <div style="flex-grow: 2;"></div>
@@ -84,8 +84,8 @@ The next meaningful part of the HTML is the profile picture:
 <figure class="image">
   <img  class="is-rounded"
         style="width: 34px; height: 34px;"
-        src="https://cdn.discordapp.com/avatars/516750892372852754/ad85e1d3cfd20968ef993a520d8c251f.png?size=128"
-        onerror="this.src = 'https://cdn.discordapp.com/embed/avatars/' + Math.round(Math.random() * (1 - 1) + 1) + '.png'"
+        src="https://cdn.discordapp.com/avatars/516750892372852754/ad85e1d3cfd20968ef993a520d8c251f.webp?size=128"
+        onerror="this.src = 'https://cdn.discordapp.com/embed/avatars/' + Math.round(Math.random() * (1 - 1) + 1) + '.webp'"
         loading="lazy">
 </figure>
 ```

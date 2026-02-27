@@ -4,7 +4,7 @@ draft = false
 title = 'Laptop RAM Woes'
 +++
 
-![Gloved hand holding a laptop RAM stick](./How_much_memory_need_for_laptop.jpg)
+![Gloved hand holding a laptop RAM stick](./How_much_memory_need_for_laptop.webp)
 
 Laptop RAM is a pain point for me. I've inexplicably never had a RAM upgrade work right out of the box for a laptop... Maybe I'm just unlucky. I've never had this happen on desktop though.
 
@@ -20,7 +20,7 @@ This gets considerably more confusing though. If, at a later date, you remove on
 
 I'll take partial blame for this, I bought 3200MHz sticks instead of 2666Mhz sticks (The CPU runs the RAM at 2666MHz) I expected it to just run the RAM at the supported lower speed of the CPU. I'm told this is not the case? It did do exactly that anyway. I guess I'll never know if this was the reason for the weird swapping ritual required to POST.
 
-![Output of dmidecode --type 17 command, showing the RAM running at 2667MHz](./IMG_9477-markup.jpg)
+![Output of dmidecode --type 17 command, showing the RAM running at 2667MHz](./IMG_9477-markup.webp)
 
 ## Part 2: Lenovo E14
 
@@ -33,7 +33,7 @@ So I go to Micro Center looking for some Crucial brand RAM, which they didn't se
 
 The specs are identical to the Corsair brand RAM, but for whatever reason this works perfectly first try.
 
-![dmidecode --type 17 output for the Patriot brand RAM](./Screenshot_20231228_205112.png)
+![dmidecode --type 17 output for the Patriot brand RAM](./Screenshot_20231228_205112.webp)
 
 I'm not quite sure why this worked with this brand. I can't really do diagnostics on a device that, when inserted causes the machine to not POST.
 

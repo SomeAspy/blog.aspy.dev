@@ -24,7 +24,7 @@ A few months ago, I got a nice [2022 Chevrolet Bolt EUV](https://news.chevrolet.
 At that point, you are shit outta luck. The communications between the OnStar module and the main car computer are crypto-graphically signed. [In fact, in newer GM vehicles, the entire CAN bus is encrypted (Global B)](https://gmauthority.com/blog/gm/general-motors-technology/gm-infotainment-technology/global-b/). So that essentially kills any [cool modifications like Comma.ai self driving](https://comma.ai/).
 Someone devised this contraption that uses a dismantled physical keyfob and connects it to a raspberry pi or whatever to add a lot of OnStar features for a one time purchase of like 20 or 30 bucks worth of parts.
 
-![Homemade OnStar](./image-2.png)
+![Homemade OnStar](./image-2.webp)
 
 I don't have a link for it at the time of writing because its kinda being prototyped or whatever but its cool. Still shitty that hacks like this have to be performed at all on something I "own"
 

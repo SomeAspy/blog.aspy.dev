@@ -4,7 +4,7 @@ draft = true
 title = '---TAKEN DOWN---There's always a catch with aftermarket parts'
 +++
 
-![null](./ss.png)
+![null](./ss.webp)
 
 Recently I cracked my laptop display. (My laptop is an HP Envy x360 for those wondering about ~~[specs](https://support.hp.com/us-en/document/c06449252)~~ (404).)
 It didn't bother me too much but I wanted to get it fixed, so I bought a replacement display. [This one specifically](https://www.amazon.com/gp/product/B087TGJZHW)
