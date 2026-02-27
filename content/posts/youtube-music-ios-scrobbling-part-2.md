@@ -20,6 +20,6 @@ However, I also have my fork of it that adds a dockerfile to build it, which wil
 
 In both cases, it is quite easy to do. I've written the readme file for both to be easy to follow, so I will skip detailing it and just suggest you follow the readme on the repository.
 
-Additionally, since this is only a tweak you need the original .ipa file to inject it into. While there are several websites that host .ipa files for various apps, ~~I host YTM .ipa files I pull from my jailbroken iPhone 8 at <https://ipa.aspy.dev/youtube_music/stable/>~~ (*Dead 2/26/26*)
+Additionally, since this is only a tweak you need the original .ipa file to inject it into. While there are several websites that host .ipa files for various apps, ~~I host YTM .ipa files I pull from my jailbroken iPhone 8 at ipa.aspy.dev/youtube_music/stable/~~ (*Dead 2/26/26*)
 
 You can also pull your own using [Frida](https://frida.re/), but I believe a jailbroken device is required to extract `.ipa` files.
