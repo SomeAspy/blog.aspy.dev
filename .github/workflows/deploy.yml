@@ -1,0 +1,24 @@
+name: Deploy Hugo
+on: push
+jobs:
+    deploy:
+        runs-on: ubuntu-slim
+        steps:
+            - uses: actions/checkout@v6
+              with:
+                  submodules: true
+                  fetch-depth: 1
+
+            - name: Setup Hugo
+              uses: peaceiris/actions-hugo@v3
+              with:
+                  hugo-version: latest
+
+            - name: Build Site
+              run: hugo --minify
+
+            - name: Deploy Github Pages
+              uses: peaceiris/actions-gh-pages@v4
+              with:
+                  github_token: ${{secrets.GITHUB_TOKEN}}
+                  publish_dir: ./public
