@@ -3,6 +3,8 @@ languageCode: en-us
 title: Aspy's Blog
 theme: PaperMod
 
+permalinks:
+  posts: "/:title/"
 
 params:
   assets:
